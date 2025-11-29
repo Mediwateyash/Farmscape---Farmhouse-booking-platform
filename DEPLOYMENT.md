@@ -8,6 +8,31 @@ This guide explains how to deploy **FarmScape** for free using **Render** (Backe
 
 ---
 
+---
+
+## Part 0: Get a Free Database (MongoDB Atlas)
+
+1.  **Sign Up**: Go to [mongodb.com/atlas](https://www.mongodb.com/atlas/database) and create a free account.
+2.  **Create Cluster**: Select the **Shared (Free)** option and click **Create Cluster**.
+3.  **Create User**:
+    -   Go to **Database Access** (left sidebar).
+    -   Click **Add New Database User**.
+    -   Enter a username (e.g., `admin`) and password. **Remember this password!**
+    -   Click **Add User**.
+4.  **Network Access**:
+    -   Go to **Network Access** (left sidebar).
+    -   Click **Add IP Address**.
+    -   Select **Allow Access from Anywhere** (`0.0.0.0/0`).
+    -   Click **Confirm**.
+5.  **Get Connection String**:
+    -   Go to **Database** (left sidebar).
+    -   Click **Connect**.
+    -   Select **Drivers**.
+    -   Copy the connection string (e.g., `mongodb+srv://admin:<password>@cluster0...`).
+    -   **Important**: Replace `<password>` with the password you created in step 3.
+
+---
+
 ## Part 1: Deploy Backend (Render)
 
 1.  **Sign Up**: Go to [render.com](https://render.com/) and sign up with GitHub.
