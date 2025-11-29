@@ -1,0 +1,65 @@
+:root {
+  --primary-color: #5dade2;
+  /* Light Blue */
+  --secondary-color: #3498db;
+  /* Darker Light Blue */
+  --accent-color: #f1c40f;
+  --dark-bg: #eaf2f8;
+  /* Very Light Blue/Gray Background */
+  --card-bg: #ffffff;
+  /* White Cards */
+  --text-color: #34495e;
+  /* Dark Text */
+  --text-muted: #7f8c8d;
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6dbdf;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}

@@ -1,0 +1,36 @@
+.manage-bookings-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.manage-bookings-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.manage-bookings-container th,
+.manage-bookings-container td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.btn-approve {
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.btn-reject {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}

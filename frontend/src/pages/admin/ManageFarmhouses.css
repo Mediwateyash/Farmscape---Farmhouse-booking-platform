@@ -1,0 +1,55 @@
+.manage-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.add-farmhouse-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.add-farmhouse-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-farmhouse-form input,
+.add-farmhouse-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-farmhouse-form button {
+    background: #27ae60;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.farmhouse-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.farmhouse-list th,
+.farmhouse-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.btn-delete {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
