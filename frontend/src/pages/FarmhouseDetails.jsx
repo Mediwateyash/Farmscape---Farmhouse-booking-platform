@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_URL from '../config';
 import AuthContext from '../context/AuthContext';
 import './FarmhouseDetails.css';
 
@@ -16,7 +16,7 @@ const FarmhouseDetails = () => {
     useEffect(() => {
         const fetchFarmhouse = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:5000/api/farmhouses/${id}`);
+                const { data } = await axios.get(`${API_URL}/api/farmhouses/${id}`);
                 setFarmhouse(data);
             } catch (error) {
                 console.error('Error fetching farmhouse:', error);
@@ -36,7 +36,7 @@ const FarmhouseDetails = () => {
         const totalPrice = farmhouse.price * guests; // Simplified calculation
 
         try {
-            await axios.post('http://localhost:5000/api/bookings', {
+            await axios.post(`${API_URL}/api/bookings`, {
                 user: user._id,
                 farmhouse: farmhouse._id,
                 date,
@@ -65,7 +65,7 @@ const FarmhouseDetails = () => {
                 {farmhouse.images.map((img, index) => (
                     <img
                         key={index}
-                        src={img.startsWith('http') ? img : `http://localhost:5000/${img}`}
+                        src={img.startsWith('http') ? img : `${API_URL}/${img}`}
                         alt={farmhouse.name}
                     />
                 ))}

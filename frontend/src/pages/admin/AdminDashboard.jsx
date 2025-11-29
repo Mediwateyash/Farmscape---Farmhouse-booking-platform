@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import API_URL from '../../config';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -13,9 +14,9 @@ const AdminDashboard = () => {
     useEffect(() => {
         const fetchStats = async () => {
             try {
-                const usersRes = await axios.get('http://localhost:5000/api/users');
-                const bookingsRes = await axios.get('http://localhost:5000/api/bookings');
-                const farmhousesRes = await axios.get('http://localhost:5000/api/farmhouses');
+                const usersRes = await axios.get(`${API_URL}/api/users`);
+                const bookingsRes = await axios.get(`${API_URL}/api/bookings`);
+                const farmhousesRes = await axios.get(`${API_URL}/api/farmhouses`);
 
                 setStats({
                     users: usersRes.data.length,

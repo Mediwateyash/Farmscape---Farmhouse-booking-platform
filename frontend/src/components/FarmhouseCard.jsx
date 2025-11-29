@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import API_URL from '../config';
 import './FarmhouseCard.css';
 
 const FarmhouseCard = ({ farmhouse }) => {
     return (
         <div className="farmhouse-card">
             <img
-                src={farmhouse.images[0]?.startsWith('http') ? farmhouse.images[0] : `http://localhost:5000/${farmhouse.images[0]}`}
+                src={farmhouse.images[0]?.startsWith('http') ? farmhouse.images[0] : `${API_URL}/${farmhouse.images[0]}`}
                 alt={farmhouse.name}
                 className="card-image"
             />

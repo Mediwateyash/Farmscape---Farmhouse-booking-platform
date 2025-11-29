@@ -14,8 +14,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/login', { email, password });
-            login(data);
+            await login(email, password);
             navigate('/');
         } catch (err) {
             setError(err.response?.data?.message || 'Login failed');

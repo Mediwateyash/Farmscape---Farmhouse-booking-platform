@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_URL from '../config';
 import AuthContext from '../context/AuthContext';
 import './Auth.css'; // Reusing the auth styles
 
@@ -14,7 +15,7 @@ const AdminLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/admin/login', { email, password });
+            const { data } = await axios.post(`${API_URL}/api/auth/admin/login`, { email, password });
             login(data);
             navigate('/admin/dashboard');
         } catch (err) {

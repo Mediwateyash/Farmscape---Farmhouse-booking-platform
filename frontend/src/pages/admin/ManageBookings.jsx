@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import API_URL from '../../config';
 import './ManageBookings.css';
 
 const ManageBookings = () => {
@@ -11,7 +12,7 @@ const ManageBookings = () => {
 
     const fetchBookings = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/api/bookings');
+            const { data } = await axios.get(`${API_URL}/api/bookings`);
             setBookings(data);
         } catch (error) {
             console.error('Error fetching bookings:', error);
@@ -20,7 +21,7 @@ const ManageBookings = () => {
 
     const handleStatusChange = async (id, status) => {
         try {
-            await axios.put(`http://localhost:5000/api/bookings/${id}/status`, { status });
+            await axios.put(`${API_URL}/api/bookings/${id}/status`, { status });
             fetchBookings();
         } catch (error) {
             console.error('Error updating status:', error);

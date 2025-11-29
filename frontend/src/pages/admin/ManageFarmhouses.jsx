@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import API_URL from '../../config';
 import './ManageFarmhouses.css';
 
 const ManageFarmhouses = () => {
@@ -20,7 +21,7 @@ const ManageFarmhouses = () => {
 
     const fetchFarmhouses = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/api/farmhouses');
+            const { data } = await axios.get(`${API_URL}/api/farmhouses`);
             setFarmhouses(data);
         } catch (error) {
             console.error('Error fetching farmhouses:', error);
@@ -30,7 +31,7 @@ const ManageFarmhouses = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure?')) {
             try {
-                await axios.delete(`http://localhost:5000/api/farmhouses/${id}`);
+                await axios.delete(`${API_URL}/api/farmhouses/${id}`);
                 fetchFarmhouses();
             } catch (error) {
                 console.error('Error deleting farmhouse:', error);
@@ -85,12 +86,12 @@ const ManageFarmhouses = () => {
 
         try {
             if (editingId) {
-                await axios.put(`http://localhost:5000/api/farmhouses/${editingId}`, data, {
+                await axios.put(`${API_URL}/api/farmhouses/${editingId}`, data, {
                     headers: { 'Content-Type': 'multipart/form-data' },
                 });
                 alert('Farmhouse updated successfully!');
             } else {
-                await axios.post('http://localhost:5000/api/farmhouses', data, {
+                await axios.post(`${API_URL}/api/farmhouses`, data, {
                     headers: { 'Content-Type': 'multipart/form-data' },
                 });
                 alert('Farmhouse added successfully!');

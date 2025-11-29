@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import API_URL from '../config';
 import FarmhouseCard from '../components/FarmhouseCard';
 import './Home.css';
 
@@ -12,7 +13,7 @@ const Home = () => {
     useEffect(() => {
         const fetchFarmhouses = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5000/api/farmhouses');
+                const { data } = await axios.get(`${API_URL}/api/farmhouses`);
                 setFarmhouses(data);
                 setFilteredFarmhouses(data);
             } catch (error) {

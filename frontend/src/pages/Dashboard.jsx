@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import API_URL from '../config';
 import AuthContext from '../context/AuthContext';
 import './Dashboard.css';
 
@@ -10,7 +11,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchBookings = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:5000/api/bookings/mybookings/${user._id}`);
+                const { data } = await axios.get(`${API_URL}/api/bookings/mybookings/${user._id}`);
                 setBookings(data);
             } catch (error) {
                 console.error('Error fetching bookings:', error);

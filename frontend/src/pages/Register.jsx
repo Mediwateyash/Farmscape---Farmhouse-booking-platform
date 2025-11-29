@@ -9,15 +9,18 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const { login } = useContext(AuthContext);
+    const { register } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
-            login(data);
-            navigate('/');
+            await register(name, email, password);
+            // After register, maybe auto login? The context register function doesn't login.
+            // Let's check AuthContext register again. It just posts.
+            // We should probably login after register or redirect to login.
+            // For now, let's redirect to login.
+            navigate('/login');
         } catch (err) {
             setError(err.response?.data?.message || 'Registration failed');
         }
