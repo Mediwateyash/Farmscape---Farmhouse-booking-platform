@@ -4,6 +4,12 @@ const Farmhouse = require('./models/Farmhouse');
 const connectDB = require('./config/db');
 
 dotenv.config();
+
+// Override MONGO_URI if passed as argument
+if (process.argv[2]) {
+    process.env.MONGO_URI = process.argv[2];
+}
+
 connectDB();
 
 const farmhouses = [
